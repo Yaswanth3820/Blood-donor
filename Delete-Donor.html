@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Management</title>
+</head>
+<body>
+    <h2>Delete a Blood Donor</h2>
+    <div id="donorList"></div>
+
+    <script>
+        // Function to fetch and display the list of donors
+        function fetchDonors() {
+            fetch('http://localhost/searchDonors.php')
+                .then(response => response.json())
+                .then(data => {
+                    const donorListDiv = document.getElementById('donorList');
+                    donorListDiv.innerHTML = '';
+
+                    if (data.length > 0) {
+                        data.forEach(donor => {
+                            donorListDiv.innerHTML += `
+                                <p>
+                                    Name: ${donor.name}, Contact: ${donor.contact}, Blood Group: ${donor.bloodGroup}
+                                    <button onclick="deleteDonor(${donor.id})">Delete</button>
+                                </p>`;
+                        });
+                    } else {
+                        donorListDiv.innerHTML = '<p>No donors found.</p>';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Function to delete a donor
+        function deleteDonor(id) {
+            if (confirm('Are you sure you want to delete this donor?')) {
+                fetch(`http://localhost/deleteDonor.php?id=${id}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        alert(data.message);
+                        fetchDonors(); // Refresh the donor list after deletion
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        }
+
+        // Fetch the list of donors when the page loads
+        window.onload = fetchDonors;
+    </script>
+</body>
+</html>
+<style>
+    body{
+        background-image: url('');
+    }
+</style>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Website</title>
+    <link rel="icon" href="blood.png">
+    <link rel="stylesheet" href="Blood.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+<button class="button">
+  <p class="button__text">
+    <span style="--index: 0;">+B</span>
+    <span style="--index: 1;">L</span>
+    <span style="--index: 2;">O</span>
+    <span style="--index: 3;">O</span>
+    <span style="--index: 4;">D</span>
+    <span style="--index: 5;"> </span>
+    <span style="--index: 6;">D</span>
+    <span style="--index: 7;">O</span>
+    <span style="--index: 8;">N</span>
+    <span style="--index: 9;">O</span>
+    <span style="--index: 10;">R</span>
+    <span style="--index: 11;"> </span>
+    <span style="--index: 12;">W</span>
+    <span style="--index: 13;">E</span>
+    <span style="--index: 14;">B</span>
+    <span style="--index: 15;">S</span>
+    <span style="--index: 16;">I</span>
+    <span style="--index: 17;">T</span>
+    <span style="--index: 18;">E.</span>
+  </p>
+
+  <div class="button__circle">
+    <img src="bd.jpeg" alt="Donate Blood Save Life" class="button__icon" width="130" height="130" />
+    </div>
+     <path
+        d="bd.jpeg"fill="currentColor"
+      ></path>
+    </svg>
+      <path
+        d="" fill="currentColor"
+      ></path>
+    </svg>
+  </div>
+</button>
+<h5>Blood Donor Website</h5>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="developer.html">Developer</a></li>
+        </ul>
+        <a class="create-btn" href="CA.html">Create account</a>
+        <a class="login-btn" href="login.html">Login</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Donate Blood, Save Lives</h1>
+            <p>Your blood donation can give someone another chance at life. Be a hero today.</p>
+            <button style="background-color:orange; border-radius: 5px; padding:10px;font-weight: 100; text-decoration: none;"><a href="services.html"><b>Donate Blood</b></a></button>
+        </div>
+    </section>
+
+    
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Blood Donor Website. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+            <a href="#developer">Developer</a>
+        </div>
+    </footer>
+
+</body>
+</html>
+<style>
+    
+.button {
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-content: center;
+  transition:
+    transform 200ms;
+  font-weight: 600;
+  margin-left: 440px;
+}
+
+.button__text {
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 8s linear infinite;
+
+
+  > span {
+    position: absolute;
+    transform: rotate(calc(18deg * var(--index)));
+    inset: 7px;
+  }
+}
+
+.button__circle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+
+  color: #dc2743;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button__icon--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+@keyframes text-rotation {
+  to {
+    rotate: -360deg;
+  }
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+h5{
+    margin-top: -60px;
+    justify-content: center;
+}
+</style>

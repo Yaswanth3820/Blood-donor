@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Search</title>
+</head>
+<style>
+    body{
+        background-image: url('search-blood.jpg');
+        background-size: cover;
+    }
+</style>
+<body>
+    <h2>Search for Blood Donors</h2>
+    <form id="searchForm">
+        <label for="bloodGroup">Blood Group:</label>
+        <input type="text" id="bloodGroup" name="bloodGroup" placeholder="e.g., A+, O-, B+" required>
+        <button type="submit">Search</button>
+    </form>
+    <div id="results"></div>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Get the value entered by the user
+            const bloodGroup = document.getElementById('bloodGroup').value;
+
+            // Make a request to the PHP backend
+            fetch(`http://localhost/searchDonors.php?bloodGroup=${bloodGroup}`)
+                .then(response => response.json())
+                .then(data => {
+                    const resultsDiv = document.getElementById('results');
+                    resultsDiv.innerHTML = '';
+
+                    if (data.length > 0) {
+                        data.forEach(donor => {
+                            resultsDiv.innerHTML += `<p>Name: ${donor.name}, Contact: ${donor.contact}, Blood Group: ${donor.bloodGroup}</p>`;
+                        });
+                    } else {
+                        resultsDiv.innerHTML = '<p>No donors found for the selected blood group.</p>';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

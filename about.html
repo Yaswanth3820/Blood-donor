@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Website</title>
+    <link rel="icon" href="services.jpeg">
+    <link rel="stylesheet" href="Blood.css">
+</head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-image: url('baabout.jpg');
+            background-size: 100%;
+            padding: 0px;
+        }
+        /* Header and Navigation */
+        .about-section {
+            padding: 2rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .about-section h2 {
+            font-size: 2rem;
+            color: #d9534f;
+            margin-bottom: 1rem;
+        }
+        .about-section p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            color: #666;
+            background-color: wheat;
+            padding: 20px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            margin-top: 2rem;
+            padding: 10px;
+        }
+        .card {
+            float: inline-end;
+            margin: 50px;
+            width: 300px;
+            height: 200px;
+            perspective: 1000px;
+        }
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.999s;
+        }
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back, .card-fron, .card-bac {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 10px solid #6A2C70;
+            border-radius: 10px;
+            font-size: 24px;
+        }
+        .card-front, .card-fron {
+            transform: rotateY(0deg);
+            background-size: cover;
+            color: #fff;
+        }
+        .card-back, .card-bac {
+            transform: rotateY(180deg);
+            background-color: gold;
+        }
+        .card-front {
+            background-image: url('vision.jpeg');
+        }
+        .card-fron {
+            background-image: url('mission1.jpeg');
+        }
+        /* Accordion Styles */
+        .accordion {
+    background-color: #3498DB; /* Calming Sky Blue */
+    color: #FFFFFF; /* White text for contrast */
+    font-family: 'poppins', sans-serif; /* Modern and clean font */
+    font-weight: 600;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.accordion:hover {
+    background-color: #2980B9; 
+}
+
+.active, .accordion:focus {
+    background-color: #ECF0F1; 
+    color: #2C3E50; 
+}
+
+.panel {
+    padding: 0 15px;
+    background-color: #F0F4F8; 
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-bottom: 1px solid #BDC3C7; 
+    border-radius: 0 0 5px 5px;
+}
+
+    </style>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h5>Blood Donor Website - About Us</h5>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="developer.html">Developer</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section with Flip Cards -->
+    <section class="about-section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p class="para">Welcome to the Blood Donor Website, a platform dedicated to connecting blood donors with those in need. Our mission is to ensure that no one faces a shortage of blood in times of emergency. We strive to build a community of donors and recipients, ensuring a timely supply of life-saving blood.</p>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"></div>
+                    <div class="card-back">
+                        <p>Our goal is to create a seamless platform that connects blood donors and recipients, ensuring timely access to life-saving donations and building a supportive community.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-fron"></div>
+                    <div class="card-bac">
+                        <p>To create a user-friendly platform that connects blood donors with those in need, ensuring a seamless and efficient process for saving lives.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accordion Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2>Why Choose Our Blood Donor Site?</h2>
+
+            <button class="accordion">User-Friendly Interface</button>
+            <div class="panel">
+                <p>Easy navigation and intuitive design make it simple for donors and recipients to connect.</p>
+            </div>
+
+            <button class="accordion">Real-Time Availability</button>
+            <div class="panel">
+                <p>Access to up-to-date information on available blood types and nearby donors.</p>
+            </div>
+
+            <button class="accordion">Secure Data Handling</button>
+            <div class="panel">
+                <p>Ensures user data privacy and secure transactions between donors and recipients.</p>
+            </div>
+
+            <button class="accordion">Quick Registration</button>
+            <div class="panel">
+                <p>Simple and fast sign-up process for donors and seekers.</p>
+            </div>
+
+            <button class="accordion">Community Support</button>
+            <div class="panel">
+                <p>Builds a network of reliable donors, creating a supportive community for those in need.</p>
+            </div>
+
+            <button class="accordion">24/7 Access</button>
+            <div class="panel">
+                <p>Accessible anytime, making it easier to find or donate blood during emergencies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Blood Donor Website. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Accordion -->
+    <script>
+        const accordions = document.querySelectorAll(".accordion");
+        accordions.forEach(acc => {
+            acc.addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
